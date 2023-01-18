@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ToDoList.Models;
+using RecipeBox.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace RecipeBox
