@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RecipeBox.Models.Tag
+
+<h2>Edit</h2>
+
+<h4>Edit this Tag: @Html.DisplayFor(model => model.Categories)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.TagId)
+
+  @Html.LabelFor(model => model.Categories)
+  @Html.EditorFor(model => model.Categories)
+
+  <input type="submit" value="Save" />
+}
+
+<p>@Html.ActionLink("Back to Tag list", "Index")</p>
