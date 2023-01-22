@@ -8,15 +8,15 @@
 
 <hr>
 
-<h4>Recipes</h4>
-@if (Model["recipes"].Length == 0)
+<h4>Tags</h4>
+@if (Model["tags"].Length == 0)
 {
-  <p>No Recipes have been added yet</p>
+  <p>No Tags have been added yet</p>
 }
 <ul>
-  @foreach (Recipe recipe in Model["recipes"])
+  @foreach (Tag tag in Model["tags"])
   {
-    <li>@Html.ActionLink(@recipe.RecipeName, "Details", "Recipes", new { id = @recipe.RecipeId})</li>
+    <li>@Html.ActionLink(@tag.Categories, "Details", "Recipes", new { id = @tag.TagId})</li>
   }
 </ul>
 

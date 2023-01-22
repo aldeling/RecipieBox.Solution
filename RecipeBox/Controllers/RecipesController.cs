@@ -19,6 +19,7 @@ namespace RecipeBox.Controllers
 
     public RecipesController(UserManager<ApplicationUser> userManager, RecipeBoxContext db)
     {
+      _userManager = userManager;
       _db = db;
     }
 
@@ -28,7 +29,7 @@ namespace RecipeBox.Controllers
       ApplicationUser currentUser = await _userManager.FindByIdAsync(userId);
       List<Recipe> userRecipes = _db.Recipes
                               .Where(entry => entry.User.Id == currentUser.Id)
-                              .Include(recipe => recipe.RecipeName)
+                              //.Include(recipe => recipe.RecipeName)
                               .ToList();
       return View(userRecipes);
     }
